@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance Report</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Attendance Report</h1>
+
+<table border="1" align="center" cellpadding="10">
+    <tr>
+        <th>Employee ID</th>
+        <th>Date</th>
+        <th>Status</th>
+    </tr>
+
+    <tbody id="attendanceTable">
+    </tbody>
+</table>
+
+<br><br>
+
+<center>
+    <button onclick="window.location.href='index.html'">
+        Back to Home
+    </button>
+</center>
+
+<script>
+
+let table = document.getElementById("attendanceTable");
+
+for(let i=1001; i<=1100; i++){
+
+    let row = `
+    <tr>
+        <td>${i}</td>
+        <td>2026-06-02</td>
+        <td>${i % 3 == 0 ? "Late" : "Present"}</td>
+    </tr>
+    `;
+
+    table.innerHTML += row;
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search Attendance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="header">
+        BHEL Employee Attendance Portal
+    </div>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h1>Search Attendance</h1>
+
+            <input type="number" id="empId" placeholder="Enter Employee ID">
+
+            <br><br>
+
+            <button onclick="searchAttendance()">
+                📊 Search
+            </button>
+
+            <div id="result"></div>
+
+        </div>
+
+    </div>
+
+    <div class="back-home">
+        <a href="index.html">
+            <button>🏠 Back to Home</button>
+        </a>
+    </div>
+
+    <footer>
+        © 2026 BHEL Attendance Management System
+    </footer>
+
+    <script>
+
+        function searchAttendance() {
+
+            let id = parseInt(document.getElementById("empId").value);
+
+            if (id >= 1001 && id <= 1100) {
+
+                let status;
+                let inTime;
+                let outTime;
+
+                if (id % 3 == 0) {
+                    status = "Late";
+                    inTime = "09:20 AM";
+                }
+                else {
+                    status = "Present";
+                    inTime = "09:00 AM";
+                }
+
+                outTime = "05:30 PM";
+
+                document.getElementById("result").innerHTML =
+
+                `<div style="margin-top:20px; text-align:left;">
+
+                    <h3 style="color:#003366;">
+                        Attendance Details
+                    </h3>
+
+                    <p><b>Employee ID:</b> ${id}</p>
+
+                    <p><b>Employee Name:</b> Emp${id}</p>
+
+                    <p><b>Department:</b> Production</p>
+
+                    <p><b>Date:</b> 2026-06-02</p>
+
+                    <p><b>Status:</b> ${status}</p>
+
+                    <p><b>In Time:</b> ${inTime}</p>
+
+                    <p><b>Out Time:</b> ${outTime}</p>
+
+                </div>`;
+            }
+            else {
+
+                document.getElementById("result").innerHTML =
+
+                `<p style="color:red; font-weight:bold;">
+                    Attendance Record Not Found
+                </p>`;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

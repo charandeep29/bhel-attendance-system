@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Employees</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Employee List</h1>
+
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+            </tr>
+        </thead>
+
+        <tbody id="employeeTable">
+        </tbody>
+    </table>
+
+    <div class="back-home">
+        <a href="index.html">
+            <button>Back to Home</button>
+        </a>
+    </div>
+
+    <script>
+
+        for(let i = 1001; i <= 1100; i++)
+        {
+            document.getElementById("employeeTable").innerHTML +=
+            `
+            <tr>
+                <td>${i}</td>
+                <td>Emp${i}</td>
+            </tr>
+            `;
+        }
+
+    </script>
+
+</body>
+
+</html>

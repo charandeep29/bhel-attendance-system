@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search Employee</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="header">
+        BHEL Employee Attendance Portal
+    </div>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h1>Search Employee</h1>
+
+            <input type="number" id="empId" placeholder="Enter Employee ID">
+
+            <br><br>
+
+            <button onclick="searchEmployee()">
+                🔍 Search
+            </button>
+
+            <div id="result"></div>
+
+        </div>
+
+    </div>
+
+    <div class="back-home">
+        <a href="index.html">
+            <button>🏠 Back to Home</button>
+        </a>
+    </div>
+
+    <footer>
+        © 2026 BHEL Attendance Management System
+    </footer>
+
+    <script>
+
+        function searchEmployee() {
+
+            let id = document.getElementById("empId").value;
+
+            if (id >= 1001 && id <= 1100) {
+
+                document.getElementById("result").innerHTML =
+
+                `<div style="margin-top:20px; text-align:left;">
+
+                    <h3 style="color:#003366;">
+                        Employee Details
+                    </h3>
+
+                    <p><b>Employee ID:</b> ${id}</p>
+
+                    <p><b>Employee Name:</b> Emp${id}</p>
+
+                    <p><b>Department:</b> Production</p>
+
+                    <p><b>Designation:</b> Engineer</p>
+
+                    <p><b>Email:</b> emp${id}@bhel.com</p>
+
+                    <p><b>Location:</b> BHEL Hyderabad</p>
+
+                </div>`;
+
+            }
+            else {
+
+                document.getElementById("result").innerHTML =
+
+                `<p style="color:red; font-weight:bold;">
+                    Employee Not Found
+                </p>`;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
