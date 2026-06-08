@@ -12,11 +12,12 @@
     <div class="header">
         BHEL Employee Attendance Portal
     </div>
+    <marquee class="announcement" scrollamount="8">
+    Welcome to BHEL Employee Attendance Management System
+    </marquee>
 
     <!-- Main Content -->
     <div class="container">
-
-        <h2>BHEL Project Solution</h2>
 
         <div class="card">
 
@@ -26,8 +27,13 @@
             <h1>BHEL Attendance Management System</h1>
 
             <p class="welcome">
-                Welcome to the Employee Attendance Management Portal.
+            Welcome to the Employee Attendance Management Portal.
             </p>
+
+            <div class="datetime">
+            <p id="currentDate"></p>
+            <p id="currentTime"></p>
+            </div>
             
             <div class="stats">
 
@@ -79,10 +85,35 @@
 
     </div>
 
-    <!-- Footer -->
-    <footer>
-        © 2026 BHEL Attendance Management System | Developed by Charan Deep
-    </footer>
+   <!-- Footer -->
+<footer>
+    © 2026 BHEL Attendance Management System<br>
+    Developed for Academic Project by Charan Deep
+</footer>
+
+<script>
+
+function updateDateTime() {
+
+    let now = new Date();
+
+    document.getElementById("currentDate").innerHTML =
+        "📅 Date: " + now.toLocaleDateString();
+
+    document.getElementById("currentTime").innerHTML =
+        "⏰ Time: " + now.toLocaleTimeString();
+
+}
+
+updateDateTime();
+
+setInterval(updateDateTime, 1000);
+
+</script>
+
+</body>
+
+</html>
 
 </body>
 
